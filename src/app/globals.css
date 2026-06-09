@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 10% 4%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 4%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 4%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 188 100% 35%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 91% 45%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 65%;
+    --accent: 150 100% 30%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
+    --ring: 188 100% 35%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground overflow-x-hidden selection:bg-primary/20;
+    /* Clean Deep Black Texture */
+    background-color: #050505;
+  }
+}
+
+@layer components {
+  .cinematic-text {
+    @apply font-headline tracking-tighter leading-[0.9] uppercase;
+  }
+  
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10 transition-all duration-500 shadow-sm;
+  }
+
+  .glass-panel:hover {
+    @apply bg-white/10 border-primary/20 shadow-lg;
+  }
+
+  .hud-border {
+    @apply relative before:absolute before:inset-0 before:border before:border-primary/10 before:pointer-events-none;
+  }
+
+  .text-glow {
+    text-shadow: 0 0 15px rgba(0, 150, 150, 0.3);
+  }
+
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+.font-body { font-family: 'Inter', sans-serif; }
+.font-headline { font-family: 'Space Grotesk', sans-serif; }
+.font-code { font-family: 'JetBrains Mono', monospace; }
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 6s ease-in-out infinite;
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.scanline-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, rgba(0, 150, 150, 0.1), transparent);
+  animation: scanline 4s linear infinite;
+  pointer-events: none;
+}
+
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.tilt-card {
+  transition: transform 0.2s ease-out;
+  transform-style: preserve-3d;
+}
+
+.tilt-card:hover {
+  transform: rotateX(5deg) rotateY(5deg);
+}

@@ -1,0 +1,34 @@
+{
+  "placeholderImages": [
+    {
+      "id": "proj-1",
+      "description": "AI-Powered Medical Diagnosis Tool",
+      "imageUrl": "https://picsum.photos/seed/42/800/600",
+      "imageHint": "medical ai"
+    },
+    {
+      "id": "proj-2",
+      "description": "Real-time Crypto Sentiment Tracker",
+      "imageUrl": "https://picsum.photos/seed/15/800/600",
+      "imageHint": "blockchain crypto"
+    },
+    {
+      "id": "proj-3",
+      "description": "Autonomous Drone Pathfinding",
+      "imageUrl": "https://picsum.photos/seed/88/800/600",
+      "imageHint": "drone robotics"
+    },
+    {
+      "id": "cert-1",
+      "description": "Google Data Analytics Professional Certificate",
+      "imageUrl": "https://picsum.photos/seed/cert1/400/300",
+      "imageHint": "certificate data"
+    },
+    {
+      "id": "cert-2",
+      "description": "NVIDIA Deep Learning Institute - Computer Vision",
+      "imageUrl": "https://picsum.photos/seed/cert2/400/300",
+      "imageHint": "certificate ai"
+    }
+  ]
+}
